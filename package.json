@@ -1,4 +1,5 @@
 {
+  "homepage": "https://SebaMutuku.github.io/SebastianBlog",
   "name": "sebastian-mutuku",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +17,8 @@
     "@types/node": "^16.18.87",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
+    "gh-pages": "^6.1.1",
+    "install": "^0.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.25.1",
@@ -28,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "alias": {
     "@srcgit ": "./src"
