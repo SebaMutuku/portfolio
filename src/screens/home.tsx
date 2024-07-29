@@ -69,7 +69,7 @@ const Summary = () => {
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            backgroundColor: appColors.black
+                            backgroundColor: appColors.black,
                         }}
                     >
                         <GitHub sx={{
