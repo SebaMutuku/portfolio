@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from "src/screens/home";
-import {HashRouter as Router, Link, Route, Routes} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
 import Education from "src/screens/education";
 import Experience from "src/screens/experience";
 import ContactMe from "src/screens/contactme";
@@ -20,7 +20,7 @@ const Navbar = () => {
 
 function App() {
     return (
-        <Router>
+        <Router basename="/">
             <Navbar/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
