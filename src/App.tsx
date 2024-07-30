@@ -9,7 +9,7 @@ import ContactMe from "src/screens/contactme";
 function App() {
     return (
         <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route index element={<Home/>}/>
             <Route path="/education" element={<Education/>}/>
             <Route path="/experience" element={<Experience/>}/>
             <Route path="/contactme" element={<ContactMe/>}/>
