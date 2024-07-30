@@ -35,6 +35,10 @@ const gridSx = {
 }
 
 const Summary = () => {
+    const handleClick = () => {
+        window.open('https://github.com/SebaMutuku', '_blank', 'noopener,noreferrer');
+    };
+
     const classes = useStyles();
     const currentDate = new Date();
     const startDate = new Date("01-04-2018")
@@ -89,7 +93,7 @@ const Summary = () => {
             <Button variant="outlined" startIcon={<Star style={{color: "gold"}}/>}
                     style={{
                         color: appColors.white, borderColor: appColors.white,
-                    }}>Star me on Github</Button>
+                    }} onClick={handleClick}>Star me and follow me on Github</Button>
         </>}/>
         {/*<div className={classes.summary}>*/}
         {/*    <Stack direction="row" spacing={2}>*/}
@@ -151,9 +155,8 @@ const WhatIDo = () => {
     const classes = useStyles();
     return (<div className={classes.whatIDo}>
         <Typography style={{
-            fontSize: '50px', textDecoration: 'underline',
-            fontWeight:"bold"
-        }}>What I do
+            fontSize: '50px', textDecoration: 'underline', fontWeight: "bold"
+        }}>What I do:
         </Typography>
         <Box sx={{flexGrow: 1, p: 2}}>
             <Grid container spacing={5} justifyContent="center">
