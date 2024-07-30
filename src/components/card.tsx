@@ -8,10 +8,8 @@ import {appColors} from "../constants/constants";
 export default function CardComponent({...props}: CardProps) {
     return (
         <Card sx={{
-            minWidth: 275,
-            maxWidth: "784px",
-            margin: "10px",
-            background: appColors.card
+            width: "100%",
+            background: appColors.primary
         }} className={props.className} variant="outlined">
             <CardContent>
                 {props.cardContent}

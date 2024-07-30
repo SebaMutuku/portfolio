@@ -1,49 +1,34 @@
 import React from "react";
 import {makeStyles} from '@mui/styles';
-import {
-    Button,
-    Container,
-    Divider,
-    Grid,
-    IconButton,
-    List,
-    ListItem,
-    ListItemText,
-    Paper,
-    Stack,
-    Theme,
-    Typography
-} from "@mui/material";
+import {Box, Button, Card, CardContent, CardMedia, Grid, ListItem, Theme, Typography} from "@mui/material";
 import {appColors, getDateDifference} from "src/constants/constants";
 import CardComponent from "src/components/card";
 import Header from "src/components/header";
-import {GitHub, Google, Star} from "@mui/icons-material";
+import {Star} from "@mui/icons-material";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
-        marginTop: "120px"
-    },
-    whatIDo: {
+        // marginTop: "110px"
+    }, whatIDo: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         height: '100vh',
         textAlign: 'center',
         margin: "20px"
-    },
-    summary: {
-        padding: '10px'
+    }, summary: {
+        padding: '0px', backgroundColor: appColors.primary,
 
     }
-
 }));
 
 
 const gridSx = {
     minHeight: 100,
     width: '100%',
-    backgroundColor: (theme: { palette: { mode: string; }; }) =>
-        theme.palette.mode === 'dark' ? '#1A2027' : appColors.card,
+    backgroundColor: (theme: {
+        palette: { mode: string; };
+    }) => theme.palette.mode === 'dark' ? '#1A2027' : appColors.card,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -54,174 +39,173 @@ const Summary = () => {
     const currentDate = new Date();
     const startDate = new Date("01-04-2018")
     const {years, months} = getDateDifference(startDate, currentDate);
-    return (
-        <div className={classes.summary}>
-            <CardComponent cardContent={
-                <>
-                    <h1>
-                        Profile summary
-                    </h1>
-                    <p style={{
-                        fontSize: '20px',
-                        fontFamily: 'Roboto, sans-serif',
-                    }}>
-                        <p>Android and Web Backend with <b> {years + months / 12} years</b> of experience, innovative
-                            and
-                            talented Senior Software engineer
-                            with Java , Spring and Spring Boot, Spring-boot security Implementation,microservices,
-                            Web service creation (SOAP and REST),Scala, Python, Django, Kotlin, Spring and Spring Boot
-                            Framework
-                            experience and spring Quarkus.
-                        </p>
-                        In addition, I have experience in Git, Git Workflows,with certification in CI/CD with Github
-                        Actions,
-                        Microsoft TeamFoundation GIT, Docker, Kubernetes,
-                        Azure Clouds, experienced in mobile UI frameworks like React Native for android and iOS
-                        development,Flutter for both Android and iOS and jetpack compose.
-                        I have used Linux and have experience in Linux commands, shell scripting and deployment on Linux
-                        environments.
-                    </p>
-                </>}/>
-            <div className={classes.summary}>
-                <Stack direction="row" spacing={2}>
-                    <IconButton
-                        color="default"
+    return (<div className={classes.summary}>
+        <CardComponent cardContent={<>
+            <Box sx={{
+                display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', mt: 10
+            }}>
+                <Box sx={{flex: 1, textAlign: 'center', px: 2}}>
+                    <Typography
+                        variant="h4"
+                        fontWeight="bold"
                         sx={{
-                            width: "45px",
-                            height: "45px",
-                            borderRadius: '50%',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            backgroundColor: appColors.black,
+                            color: appColors.white, mb: 2,
+                        }}>
+                        Profile Summary
+                    </Typography>
+                    <Typography
+                        sx={{
+                            color: appColors.white,
+                            fontWeight: 500,
+                            mb: 2,
+                            fontFamily: 'Roboto, sans-serif',
+                            fontSize: '18px',
                         }}
                     >
-                        <GitHub sx={{
-                            color: appColors.white,
-                        }}/>
-                    </IconButton>
-                    <IconButton
-                        color="default"
-                        sx={{
-                            width: "45px",
-                            height: "45px",
-                            borderRadius: '50%',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            backgroundColor: appColors.red,
+                        Android and Web Backend with <b>{years + months / 12} years</b> of experience,
+                        innovative
+                        and talented Senior Software Engineer with experience in Java, Spring, Spring Boot,
+                        Spring Boot security implementation, microservices, Web service creation (SOAP and
+                        REST), Scala, Python, Django, Kotlin, and Quarkus.
+                        In addition, I have experience in Git, Git Workflows, with certification in CI/CD with
+                        GitHub Actions,
+                        Microsoft Team Foundation GIT, Docker, Kubernetes, Azure Cloud. I am experienced in
+                        mobile UI frameworks like React Native for Android and iOS development, Flutter for both
+                        Android and iOS, and Jetpack Compose.
+                        I have used Linux and have experience with Linux commands, shell scripting, and
+                        deployment on Linux environments.
+                    </Typography>
+                </Box>
+                <Box sx={{flex: 1, textAlign: 'center', px: 2}}>
+                    <img
+                        src={require("src/assets/images/hero-img.png")}
+                        alt="Profile"
+                        style={{
+                            width: '100%', maxWidth: '500px', height: 'auto', borderRadius: '8px',
                         }}
-                    >
-                        <Google sx={{
-                            color: appColors.white,
-                        }}/>
-                    </IconButton>
-                </Stack>
-                <p>
-                    <Button variant="outlined" startIcon={<Star style={{color: "gold"}}/>}>Star me on Github</Button>
-                </p>
+                    />
+                </Box>
+            </Box>
+            <Button variant="outlined" startIcon={<Star style={{color: "gold"}}/>}
+                    style={{
+                        color: appColors.white, borderColor: appColors.white,
+                    }}>Star me on Github</Button>
+        </>}/>
+        {/*<div className={classes.summary}>*/}
+        {/*    <Stack direction="row" spacing={2}>*/}
+        {/*        <IconButton*/}
+        {/*            color="default"*/}
+        {/*            sx={{*/}
+        {/*                width: "45px",*/}
+        {/*                height: "45px",*/}
+        {/*                borderRadius: '50%',*/}
+        {/*                display: 'flex',*/}
+        {/*                justifyContent: 'center',*/}
+        {/*                alignItems: 'center',*/}
+        {/*                backgroundColor: appColors.black,*/}
+        {/*            }}*/}
+        {/*        >*/}
+        {/*            <GitHub sx={{*/}
+        {/*                color: appColors.white,*/}
+        {/*            }}/>*/}
+        {/*        </IconButton>*/}
+        {/*        <IconButton*/}
+        {/*            color="default"*/}
+        {/*            sx={{*/}
+        {/*                width: "45px",*/}
+        {/*                height: "45px",*/}
+        {/*                borderRadius: '50%',*/}
+        {/*                display: 'flex',*/}
+        {/*                justifyContent: 'center',*/}
+        {/*                alignItems: 'center',*/}
+        {/*                backgroundColor: appColors.red,*/}
+        {/*            }}*/}
+        {/*        >*/}
+        {/*            <Google sx={{*/}
+        {/*                color: appColors.white,*/}
+        {/*            }}/>*/}
+        {/*        </IconButton>*/}
+        {/*    </Stack>*/}
+        {/*    <p>*/}
+        {/*    </p>*/}
 
-            </div>
-        </div>
-    );
+        {/*</div>*/}
+    </div>);
 
 }
 
 const WhatIDo = () => {
+    const cardData = [{
+        title: 'Android Development',
+        description: ["Java, Kotlin and React native (JS and TS) with expo, Redux/MobX", "XML Layouts, Jetpack Compose and View Components", "LiveData, ViewModel, Room, WorkManager, and Navigation", "Retrofit, OkHttp, and Volley", "Dagger and Hilt", "JUnit, Espresso, Robolectric and Jest", "SQLite, Room, and Realm", "Firebase Analytics, Crashlytics, and App Performance Monitoring.", "Firebase Authentication and OAut2 and Api Authentication"],
+        iconName: 'https://via.placeholder.com/300',
+    }, {
+        title: 'Backend Development',
+        description: ["Languages: Java, Python, JavaScript, TypeScript, Kotlin", "Relational: MySQL, PostgreSQL, SQLite, MariaDB, Oracle Database, Microsoft SQL Server", "NoSQL: MongoDB, Redis, Cassandra, CouchDB, DynamoDB, Firebase Realtime Database, Couchbase", "Java: Spring Boot, Java EE, Dropwizard, Micronaut", "Python: Django, Flask, FastAPI, Pyramid", "JavaScript/TypeScript: Express.js, NestJS, Koa, Hapi.js, Sails.js", "Kotlin: Ktor, Spring Boot (Kotlin)", "Others: Serverless Framework, Apollo Server (GraphQL), Meteor", "JUnit, TestNG, Mockito, AssertJ, Cucumber, Jasmine", "JUnit, Kotest, MockK, Spek, Kluent", "Django (Python): unittest, pytest, Django Test Framework, Factory Boy"],
+        iconName: 'https://via.placeholder.com/300',
+    }, {
+        title: 'Web Development',
+        description: ["Java, Kotlin and React native (JS and TS) with expo, Redux/MobX", "XML Layouts, Jetpack Compose and View Components", "LiveData, ViewModel, Room, WorkManager, and Navigation", "Retrofit, OkHttp, and Volley", "Dagger and Hilt", "JUnit, Espresso, Robolectric and Jest", "SQLite, Room, and Realm", "Firebase Analytics, Crashlytics, and App Performance Monitoring.", "Firebase Authentication and OAut2 and Api Authentication"],
+        iconName: 'https://via.placeholder.com/300',
+    }, {
+        title: 'CiCD',
+        description: ["Java, Kotlin and React native (JS and TS) with expo, Redux/MobX", "XML Layouts, Jetpack Compose and View Components", "LiveData, ViewModel, Room, WorkManager, and Navigation", "Retrofit, OkHttp, and Volley", "Dagger and Hilt", "JUnit, Espresso, Robolectric and Jest", "SQLite, Room, and Realm", "Firebase Analytics, Crashlytics, and App Performance Monitoring.", "Firebase Authentication and OAut2 and Api Authentication"],
+        iconName: 'https://via.placeholder.com/300',
+    },];
     const classes = useStyles();
-    return (
-        <div className={classes.whatIDo}>
-            <header style={{
-                fontSize: '50px',
-                fontFamily: "-moz-initial",
-            }}>What I do
-            </header>
-            <Grid container spacing={1.25} sx={{width: '100%'}}>
-                <Grid item xs={6}>
-                    <Paper
-                        // sx={gridSx}
+    return (<div className={classes.whatIDo}>
+        <Typography style={{
+            fontSize: '50px', fontFamily: "-moz-initial",
+        }}>What I do
+        </Typography>
+        <Box sx={{flexGrow: 1, p: 2}}>
+            <Grid container spacing={5} justifyContent="center">
+                {cardData.map((card, index) => (<Grid item xs={12} sm={6} md={3} key={index}>
+                    <Card
+                        sx={{
+                            // width:400,
+                            boxShadow: `0px 4px 8px rgba(0, 0, 0, 0.2)`,
+                            borderRadius: '8px',
+                            overflow: 'hidden',
+                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                            '&:hover': {
+                                transform: 'scale(1.05)', boxShadow: `0px 8px 16px rgba(0, 0, 0, 0.3)`,
+                            },
+                        }}
                     >
-
-                        <img src={require("src/assets/images/android-app.png")} alt="Logo" style={{
-                            objectFit: 'fill',
-                            // height: '50%',
-                            // width: '50%',
-                            // // position: 'absolute',
-                            // top: 0,
-                            // left: 0,
-                        }}/>
-                    </Paper>
-                </Grid>
-                <Grid item xs={6}>
-                    <Paper sx={gridSx}>
-                        <Container>
-                            <Typography variant="h4" gutterBottom fontWeight="600" fontFamily="sans-serif">Android Development
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image={card.iconName}
+                            alt={card.title}
+                        />
+                        {/*<FontAwesome5 icon="fa-brands fa-java" />*/}
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                {card.title}
                             </Typography>
-                            <List>
-                                <ListItem>
-                                    <ListItemText primary="Android SDK"
-                                                  secondary="Includes Android Studio and Gradle."/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="Programming Languages"
-                                                  secondary="Java, Kotlin and React native (JS and TS) with expo, Redux/MobX"/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="User Interface Frameworks"
-                                                  secondary="XML Layouts, Jetpack Compose and View Components"/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="Architecture Components"
-                                                  secondary="LiveData, ViewModel, Room, WorkManager, and Navigation."/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="Networking" secondary="Retrofit, OkHttp, and Volley."/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="Dependency Injection" secondary="Dagger and Hilt."/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="Testing" secondary="JUnit, Espresso, Robolectric and Jest"/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="Database" secondary="SQLite, Room, and Realm."/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="Analytics and Monitoring"
-                                                  secondary="Firebase Analytics, Crashlytics, and App Performance Monitoring."/>
-                                </ListItem>
-                                <Divider/>
-                                <ListItem>
-                                    <ListItemText primary="User Authentication"
-                                                  secondary="Firebase Authentication and OAut2 and Api Authentication"/>
-                                </ListItem>
-                            </List>
-                        </Container>
-                    </Paper>
-                </Grid>
+                            <Typography variant="body2" color="text.secondary">
+                                {card.description.map((item, index) => (<ListItem key={index}>
+                                    <li><i className="bi bi-check"></i> <span>{item}</span></li>
+                                </ListItem>))}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>))}
             </Grid>
+        </Box>
 
-        </div>
-    )
+    </div>)
 }
 
 const Home = () => {
+
     const classes = useStyles();
-    return (
-        <div className={classes.root}>
-            <Header/>
-            <Summary/>
-            <WhatIDo/>
-        </div>
-    );
+    return (<div className={classes.root}>
+        <Header/>
+        <Summary/>
+        <WhatIDo/>
+    </div>);
 }
 
 export default Home
