@@ -21,7 +21,7 @@ const Navbar = () => {
 function App() {
     return (
         <Router basename="/">
-            <Navbar/>
+            <Home/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/education" element={<Education/>}/>
