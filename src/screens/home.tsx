@@ -1,6 +1,6 @@
 import React from "react";
 import {makeStyles} from '@mui/styles';
-import {Box, Button, Card, CardContent, CardMedia, Grid, ListItem, Theme, Typography} from "@mui/material";
+import {Box, Button, Card, CardContent, Grid, ListItem, Theme, Typography} from "@mui/material";
 import {appColors, getDateDifference} from "src/constants/constants";
 import CardComponent from "src/components/card";
 import Header from "src/components/header";
@@ -137,25 +137,22 @@ const Summary = () => {
 const WhatIDo = () => {
     const cardData = [{
         title: 'Android Development',
-        description: ["Java, Kotlin and React native (JS and TS) with expo, Redux/MobX", "XML Layouts, Jetpack Compose and View Components", "LiveData, ViewModel, Room, WorkManager, and Navigation", "Retrofit, OkHttp, and Volley", "Dagger and Hilt", "JUnit, Espresso, Robolectric and Jest", "SQLite, Room, and Realm", "Firebase Analytics, Crashlytics, and App Performance Monitoring.", "Firebase Authentication and OAut2 and Api Authentication"],
-        iconName: 'https://via.placeholder.com/300',
+        description: ["Java, Kotlin and React native (JS and TS) with expo, Redux/MobX", "XML Layouts, Jetpack Compose and View Components", "LiveData, ViewModel, Room, WorkManager, and Navigation", "Retrofit, OkHttp, and Volley", "Dagger and Hilt", "JUnit, Espresso, Robolectric and Jest", "SQLite, Room, and Realm", "Firebase Analytics, Crashlytics, and App Performance Monitoring.", "Firebase Authentication and OAut2 and Api Authentication"]
     }, {
         title: 'Backend Development',
-        description: ["Languages: Java, Python, JavaScript, TypeScript, Kotlin", "Relational: MySQL, PostgreSQL, SQLite, MariaDB, Oracle Database, Microsoft SQL Server", "NoSQL: MongoDB, Redis, Cassandra, CouchDB, DynamoDB, Firebase Realtime Database, Couchbase", "Java: Spring Boot, Java EE, Dropwizard, Micronaut", "Python: Django, Flask, FastAPI, Pyramid", "JavaScript/TypeScript: Express.js, NestJS, Koa, Hapi.js, Sails.js", "Kotlin: Ktor, Spring Boot (Kotlin)", "Others: Serverless Framework, Apollo Server (GraphQL), Meteor", "JUnit, TestNG, Mockito, AssertJ, Cucumber, Jasmine", "JUnit, Kotest, MockK, Spek, Kluent", "Django (Python): unittest, pytest, Django Test Framework, Factory Boy"],
-        iconName: 'https://via.placeholder.com/300',
+        description: ["Languages: Java, Python, JavaScript, TypeScript, Kotlin", "Relational: MySQL, PostgreSQL, SQLite, MariaDB, Oracle Database, Microsoft SQL Server", "NoSQL: MongoDB, Redis, Cassandra, CouchDB, DynamoDB, Firebase Realtime Database, Couchbase", "Java: Spring Boot, Java EE, Dropwizard, Micronaut", "Python: Django, Flask, FastAPI, Pyramid", "JavaScript/TypeScript: Express.js, NestJS, Koa, Hapi.js, Sails.js", "Kotlin: Ktor, Spring Boot (Kotlin)", "Others: Serverless Framework, Apollo Server (GraphQL), Meteor", "JUnit, TestNG, Mockito, AssertJ, Cucumber, Jasmine", "JUnit, Kotest, MockK, Spek, Kluent", "Django (Python): unittest, pytest, Django Test Framework, Factory Boy"]
     }, {
         title: 'Web Development',
-        description: ["Java, Kotlin and React native (JS and TS) with expo, Redux/MobX", "XML Layouts, Jetpack Compose and View Components", "LiveData, ViewModel, Room, WorkManager, and Navigation", "Retrofit, OkHttp, and Volley", "Dagger and Hilt", "JUnit, Espresso, Robolectric and Jest", "SQLite, Room, and Realm", "Firebase Analytics, Crashlytics, and App Performance Monitoring.", "Firebase Authentication and OAut2 and Api Authentication"],
-        iconName: 'https://via.placeholder.com/300',
+        description: ["Languages: HTML, CSS, JavaScript, TypeScript", "Frameworks: React, Angular", "Testing: Jest, Mocha, Chai, Jasmine, Cypress, Selenium, Puppeteer, Testing Library", "Web sockets", "Consuming Apis, graphQL and Apollo", "React Hooks and state management with Redux and context", "Web hosting"]
     }, {
-        title: 'CiCD',
-        description: ["Java, Kotlin and React native (JS and TS) with expo, Redux/MobX", "XML Layouts, Jetpack Compose and View Components", "LiveData, ViewModel, Room, WorkManager, and Navigation", "Retrofit, OkHttp, and Volley", "Dagger and Hilt", "JUnit, Espresso, Robolectric and Jest", "SQLite, Room, and Realm", "Firebase Analytics, Crashlytics, and App Performance Monitoring.", "Firebase Authentication and OAut2 and Api Authentication"],
-        iconName: 'https://via.placeholder.com/300',
+        title: 'CI/CD',
+        description: ["Code Collaboration and versioning", "Automated Build", "Automated Testing", "Code Analysis with SonarQube", "Automated Image tagging with docker", "Deployment to Staging with Docker and Kubernetes", "Integration Testing in Staging", "Post-Deployment Testing", "Monitoring and Logging with Sentry and Firebase", "Rollback Plan", "Performance Monitoring", "Code Documentation"]
     },];
     const classes = useStyles();
     return (<div className={classes.whatIDo}>
         <Typography style={{
-            fontSize: '50px', fontFamily: "-moz-initial",
+            fontSize: '50px', textDecoration: 'underline',
+            fontWeight:"bold"
         }}>What I do
         </Typography>
         <Box sx={{flexGrow: 1, p: 2}}>
@@ -173,15 +170,10 @@ const WhatIDo = () => {
                             },
                         }}
                     >
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image={card.iconName}
-                            alt={card.title}
-                        />
-                        {/*<FontAwesome5 icon="fa-brands fa-java" />*/}
                         <CardContent>
-                            <Typography variant="h5" component="div">
+                            <Typography variant="h4" component="div" style={{
+                                fontWeight: '600',
+                            }}>
                                 {card.title}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
