@@ -1,6 +1,19 @@
 import React from "react";
 import {makeStyles} from '@mui/styles';
-import {Button, IconButton, Stack, Theme} from "@mui/material";
+import {
+    Button,
+    Container,
+    Divider,
+    Grid,
+    IconButton,
+    List,
+    ListItem,
+    ListItemText,
+    Paper,
+    Stack,
+    Theme,
+    Typography
+} from "@mui/material";
 import {appColors, getDateDifference} from "src/constants/constants";
 import CardComponent from "src/components/card";
 import Header from "src/components/header";
@@ -16,6 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         alignItems: 'center',
         height: '100vh',
         textAlign: 'center',
+        margin: "20px"
     },
     summary: {
         padding: '10px'
@@ -24,6 +38,16 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 }));
 
+
+const gridSx = {
+    minHeight: 100,
+    width: '100%',
+    backgroundColor: (theme: { palette: { mode: string; }; }) =>
+        theme.palette.mode === 'dark' ? '#1A2027' : appColors.card,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+}
 
 const Summary = () => {
     const classes = useStyles();
@@ -109,9 +133,81 @@ const WhatIDo = () => {
         <div className={classes.whatIDo}>
             <header style={{
                 fontSize: '50px',
-                fontFamily: "-moz-initial"
+                fontFamily: "-moz-initial",
             }}>What I do
             </header>
+            <Grid container spacing={1.25} sx={{width: '100%'}}>
+                <Grid item xs={6}>
+                    <Paper
+                        // sx={gridSx}
+                    >
+
+                        <img src={require("src/assets/images/android-app.png")} alt="Logo" style={{
+                            objectFit: 'fill',
+                            // height: '50%',
+                            // width: '50%',
+                            // // position: 'absolute',
+                            // top: 0,
+                            // left: 0,
+                        }}/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={6}>
+                    <Paper sx={gridSx}>
+                        <Container>
+                            <Typography variant="h4" gutterBottom fontWeight="600" fontFamily="sans-serif">Android Development
+                            </Typography>
+                            <List>
+                                <ListItem>
+                                    <ListItemText primary="Android SDK"
+                                                  secondary="Includes Android Studio and Gradle."/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="Programming Languages"
+                                                  secondary="Java, Kotlin and React native (JS and TS) with expo, Redux/MobX"/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="User Interface Frameworks"
+                                                  secondary="XML Layouts, Jetpack Compose and View Components"/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="Architecture Components"
+                                                  secondary="LiveData, ViewModel, Room, WorkManager, and Navigation."/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="Networking" secondary="Retrofit, OkHttp, and Volley."/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="Dependency Injection" secondary="Dagger and Hilt."/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="Testing" secondary="JUnit, Espresso, Robolectric and Jest"/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="Database" secondary="SQLite, Room, and Realm."/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="Analytics and Monitoring"
+                                                  secondary="Firebase Analytics, Crashlytics, and App Performance Monitoring."/>
+                                </ListItem>
+                                <Divider/>
+                                <ListItem>
+                                    <ListItemText primary="User Authentication"
+                                                  secondary="Firebase Authentication and OAut2 and Api Authentication"/>
+                                </ListItem>
+                            </List>
+                        </Container>
+                    </Paper>
+                </Grid>
+            </Grid>
 
         </div>
     )
