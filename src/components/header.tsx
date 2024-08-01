@@ -34,7 +34,7 @@ const Header = () => {
         }}
                 style={{
                     backgroundColor: appColors.primary,
-                }}>
+                }} elevation={0}>
             <Toolbar sx={{flexGrow: 1, elevation: 0}}>
                 <Typography variant="h6" sx={{
                     flexGrow: 1,

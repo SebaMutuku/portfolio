@@ -62,11 +62,11 @@ const Summary = () => {
                             color: appColors.white,
                             fontWeight: 500,
                             mb: 2,
-                            fontFamily: 'Roboto, sans-serif',
-                            fontSize: '18px',
+                            fontFamily: 'Josefin Sans',
+                            fontSize: '20px',
                         }}
                     >
-                        Android and Web Backend with <b>{years + months / 12} years</b> of experience,
+                        Android and Web Backend with <b>{years} years and {months} months</b> of experience,
                         innovative
                         and talented Senior Software Engineer with experience in Java, Spring, Spring Boot,
                         Spring Boot security implementation, microservices, Web service creation (SOAP and
@@ -93,7 +93,8 @@ const Summary = () => {
             <Button variant="outlined" startIcon={<Star style={{color: "gold"}}/>}
                     style={{
                         color: appColors.white, borderColor: appColors.white,
-                    }} onClick={handleClick}>Star me and follow me on Github</Button>
+                    }} onClick={handleClick}>
+                Star me and follow me on Github</Button>
         </>}/>
         {/*<div className={classes.summary}>*/}
         {/*    <Stack direction="row" spacing={2}>*/}
