@@ -23,17 +23,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 
-const gridSx = {
-    minHeight: 100,
-    width: '100%',
-    backgroundColor: (theme: {
-        palette: { mode: string; };
-    }) => theme.palette.mode === 'dark' ? '#1A2027' : appColors.card,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}
-
 const Summary = () => {
     const handleClick = () => {
         window.open('https://github.com/SebaMutuku', '_blank', 'noopener,noreferrer');
@@ -52,6 +41,7 @@ const Summary = () => {
                     <Typography
                         variant="h4"
                         fontWeight="bold"
+                        fontFamily='Josefin Sans'
                         sx={{
                             color: appColors.white, mb: 2,
                         }}>
@@ -164,7 +154,6 @@ const WhatIDo = () => {
                 {cardData.map((card, index) => (<Grid item xs={12} sm={6} md={3} key={index}>
                     <Card
                         sx={{
-                            // width:400,
                             boxShadow: `0px 4px 8px rgba(0, 0, 0, 0.2)`,
                             borderRadius: '8px',
                             overflow: 'hidden',
@@ -175,11 +164,15 @@ const WhatIDo = () => {
                         }}
                     >
                         <CardContent>
-                            <Typography variant="h4" component="div" style={{
-                                fontWeight: '600',
+                            <CardContent sx={{
+                                background: appColors.primary, borderRadius: '8px'
                             }}>
-                                {card.title}
-                            </Typography>
+                                <Typography variant="h5" component="div" style={{
+                                    fontWeight: '600', color: appColors.white,
+                                }}>
+                                    {card.title}
+                                </Typography>
+                            </CardContent>
                             <Typography variant="body2" color="text.secondary">
                                 {card.description.map((item, index) => (<ListItem key={index}>
                                     <li><i className="bi bi-check"></i> <span>{item}</span></li>
