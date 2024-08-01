@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/SebastianBlog/static/css/main.c12e1db5.css",
-    "main.js": "/SebastianBlog/static/js/main.0c12c313.js",
+    "main.js": "/SebastianBlog/static/js/main.0d50d941.js",
     "static/js/453.b99e0dad.chunk.js": "/SebastianBlog/static/js/453.b99e0dad.chunk.js",
     "static/media/hero-img.png": "/SebastianBlog/static/media/hero-img.593960b6732e1ce54f2b.png",
     "index.html": "/SebastianBlog/index.html",
     "main.c12e1db5.css.map": "/SebastianBlog/static/css/main.c12e1db5.css.map",
-    "main.0c12c313.js.map": "/SebastianBlog/static/js/main.0c12c313.js.map",
+    "main.0d50d941.js.map": "/SebastianBlog/static/js/main.0d50d941.js.map",
     "453.b99e0dad.chunk.js.map": "/SebastianBlog/static/js/453.b99e0dad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c12e1db5.css",
-    "static/js/main.0c12c313.js"
+    "static/js/main.0d50d941.js"
   ]
 }
