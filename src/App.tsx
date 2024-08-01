@@ -8,8 +8,7 @@ import Projects from "src/screens/projects";
 
 
 function App() {
-    return (
-        <Routes>
+    return (<Routes>
             <Route index element={<Home/>}/>
             <Route path="/education" element={<Education/>}/>
             <Route path="/experience" element={<Experience/>}/>
@@ -17,8 +16,7 @@ function App() {
             <Route path="/projects" element={<ContactMe/>}/>
         </Routes>
 
-    )
-        ;
+    );
 }
 
 export default App;
