@@ -6,62 +6,50 @@ import React from "react";
 
 const styles = {
     headerTexts: {
-        fontWeight: '600',
-        fontFamily: 'Roboto, sans-serif',
-        padding: '0px 2px',
-        margin: '0 5px',
-        '&:hover': {
-            backgroundColor: appColors.hover,
-            textDecoration: 'underline'
+        fontWeight: '600', fontFamily: 'Josefin Sans', padding: '0px 2px', margin: '0 5px', '&:hover': {
+            // backgroundColor: appColors.hover,
+            textDecoration: 'underline',
+            color: appColors.white,
+            borderRadius: '5px',
 
-        },
-        color: appColors.white
+        }, color: appColors.white
     }
 
 }
 const Header = () => {
     const navigate = useNavigate();
-    return (
-        <AppBar position="fixed" sx={{
-            mb: 4,
-            height: "100px",
-            overflow: 'hidden',
-            '::-webkit-scrollbar': {
-                display: 'none',
-            },
-            msOverflowStyle: 'none',
-            scrollbarWidth: 'none'
-        }}
-                style={{
-                    backgroundColor: appColors.primary,
-                }} elevation={0}>
-            <Toolbar sx={{flexGrow: 1, elevation: 0}}>
-                <Typography variant="h6" sx={{
-                    flexGrow: 1,
-                    color: appColors.white,
-                    fontFamily: 'Roboto, sans-serif',
-                    fontWeight: 'bold'
-                }}>
-                    Sebastian Mutuku
-                </Typography>
-                <Box sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
-                    <Typography color="inherit"
-                                sx={styles.headerTexts} onClick={() => navigate("/")}>Home</Typography>
-                    <Typography color="inherit" sx={styles.headerTexts}
-                                onClick={() => navigate("/education")}>Education</Typography>
-                    <Typography color="inherit" sx={styles.headerTexts}
-                                onClick={() => navigate("/experience")}>Experience</Typography>
-                    <Typography color="inherit" sx={styles.headerTexts} onClick={() => navigate("/contactme")}>Contact
-                        Me</Typography>
-                </Box>
-                <Box sx={{display: {xs: 'flex', md: 'none'}}}>
-                    <Button color="inherit">
-                        <MenuIcon/>
-                    </Button>
-                </Box>
-            </Toolbar>
-        </AppBar>
-    );
+    return (<AppBar position="fixed" sx={{
+        mb: 4, height: "100px", overflow: 'hidden', '::-webkit-scrollbar': {
+            display: 'none',
+        }, msOverflowStyle: 'none', scrollbarWidth: 'none'
+    }}
+                    style={{
+                        backgroundColor: appColors.primary,
+                    }} elevation={0}>
+        <Toolbar sx={{flexGrow: 1, elevation: 0}}>
+            <Typography variant="h4" sx={{
+                flexGrow: 1, color: appColors.white, fontFamily: 'Josefin Sans', fontWeight: 'bold'
+            }}>
+                Sebastian Mutuku
+            </Typography>
+            <Box sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
+                <Typography color="inherit" variant="h6"
+                            sx={styles.headerTexts} onClick={() => navigate("/")}>Home</Typography>
+                <Typography color="inherit" sx={styles.headerTexts}
+                            onClick={() => navigate("/education")} variant="h6">Education</Typography>
+                <Typography color="inherit" sx={styles.headerTexts}
+                            onClick={() => navigate("/experience")} variant="h6">Experience</Typography>
+                <Typography color="inherit" sx={styles.headerTexts}
+                            onClick={() => navigate("/projects")} variant="h6">Projects</Typography>
+                <Typography color="inherit" sx={styles.headerTexts} onClick={() => navigate("/contactme")} variant="h6">Contact</Typography>
+            </Box>
+            <Box sx={{display: {xs: 'flex', md: 'none'}}}>
+                <Button color="inherit">
+                    <MenuIcon/>
+                </Button>
+            </Box>
+        </Toolbar>
+    </AppBar>);
 }
 
 export default Header

@@ -1,7 +1,7 @@
 export const appColors = {
     primary: "#37507E",
     black: "#000000",
-    hover: "#38537F",
+    hover: "#487ecb",
     white: "#FFFFFF",
     text: "#c7cad6",
     card: "#dfe0e3",
