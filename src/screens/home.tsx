@@ -141,7 +141,7 @@ const WhatIDo = () => {
         description: ["Languages: HTML, CSS, JavaScript, TypeScript", "Frameworks: React, Angular", "Testing: Jest, Mocha, Chai, Jasmine, Cypress, Selenium, Puppeteer, Testing Library", "Web sockets", "Consuming Apis, graphQL and Apollo", "React Hooks and state management with Redux and context", "Web hosting"]
     }, {
         title: 'CI/CD',
-        description: ["Code Collaboration and versioning", "Automated Build", "Automated Testing", "Code Analysis with SonarQube", "Automated Image tagging with docker", "Deployment to Staging with Docker and Kubernetes", "Integration Testing in Staging", "Post-Deployment Testing", "Monitoring and Logging with Sentry and Firebase","Istio for api management(as a gateway)", "Openshift deployments","Rollback Plan", "Performance Monitoring", "Code Documentation"]
+        description: ["Code Collaboration and versioning", "Automated Build", "Automated Testing", "Code Analysis with SonarQube", "Automated Image tagging with docker", "Deployment to Staging with Docker and Kubernetes", "Integration Testing in Staging", "Post-Deployment Testing", "Monitoring and Logging with Sentry and Firebase","Istio for api management(as a gateway)", "Openshift deployments","Grafana logs with LOKI","Rollback Plan", "Performance Monitoring", "Code Documentation"]
     },];
     const classes = useStyles();
     return (<div className={classes.whatIDo}>
