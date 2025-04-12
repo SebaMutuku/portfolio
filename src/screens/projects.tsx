@@ -30,7 +30,7 @@ export default function Projects() {
         title: "Victoria Bank Credit Card Solution",
         description: "Built a credit card processing solution for Victoria Bank Kenya.",
         technologies: ["Java", "JSF", "SOAP", "REST"],
-        achievements: ["Optimized several legacy applications by removing bugs.", "Performed server and database administration on Linux environments."]
+        achievements: ["Optimized several legacy applications and eliminated bugs.", "Performed server and database clean up, migration, and deployment.", "Integrated with third-party systems for credit card processing."]
     }, {
         title: "Ona Kenya FHIR-based Mobile Application",
         description: "Co-developed a mobile application compliant with WHO ANC and FHIR standards.",
@@ -87,7 +87,7 @@ export default function Projects() {
                         </Typography>
                         {project.achievements && (
                             <Box component="ul" sx={{ paddingLeft: 2, marginTop: 1 }}>
-                                <strong>Key Achievements:</strong>
+                                <strong>Major Contributions:</strong>
                                 {project.achievements.map((achievement, idx) => (
                                     <ListItem key={idx} sx={{ listStyle: "disc" }}>
                                         <Typography variant="body2">{achievement}</Typography>
