@@ -3,7 +3,6 @@ import { Box, Card, CardContent, Container, Divider, Typography } from "@mui/mat
 import Header from "src/components/header";
 import { appColors } from "src/constants/constants";
 
-// Define the types for the experience item
 interface ExperienceItem {
     company: string;
     title: string;
@@ -217,7 +216,7 @@ const Experience: React.FC = () => {
     return (
         <>
             <Header />
-            <Container sx={{ paddingTop: 4 }}>
+            <Container sx={{ paddingTop: 4, marginTop: '100px' }}>
                 <Typography
                     variant="h4"
                     gutterBottom
@@ -228,7 +227,7 @@ const Experience: React.FC = () => {
                         marginBottom: 4,
                     }}
                 >
-                    Sebastian Mutuku - Professional Experience
+                    Professional Experience
                 </Typography>
                 <SummarySection />
                 <ExperienceSection title="Work History" experiences={experiences} />
