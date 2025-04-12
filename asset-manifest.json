@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/SebastianBlog/static/css/main.c12e1db5.css",
-    "main.js": "/SebastianBlog/static/js/main.c12e6cca.js",
-    "static/js/453.b99e0dad.chunk.js": "/SebastianBlog/static/js/453.b99e0dad.chunk.js",
-    "static/media/hero-img.png": "/SebastianBlog/static/media/hero-img.593960b6732e1ce54f2b.png",
-    "index.html": "/SebastianBlog/index.html",
-    "main.c12e1db5.css.map": "/SebastianBlog/static/css/main.c12e1db5.css.map",
-    "main.c12e6cca.js.map": "/SebastianBlog/static/js/main.c12e6cca.js.map",
-    "453.b99e0dad.chunk.js.map": "/SebastianBlog/static/js/453.b99e0dad.chunk.js.map"
+    "main.css": "/SebaMutuku/portfolio/static/css/main.c12e1db5.css",
+    "main.js": "/SebaMutuku/portfolio/static/js/main.aabe8f53.js",
+    "static/js/453.b99e0dad.chunk.js": "/SebaMutuku/portfolio/static/js/453.b99e0dad.chunk.js",
+    "static/media/hero-img.png": "/SebaMutuku/portfolio/static/media/hero-img.593960b6732e1ce54f2b.png",
+    "index.html": "/SebaMutuku/portfolio/index.html",
+    "main.c12e1db5.css.map": "/SebaMutuku/portfolio/static/css/main.c12e1db5.css.map",
+    "main.aabe8f53.js.map": "/SebaMutuku/portfolio/static/js/main.aabe8f53.js.map",
+    "453.b99e0dad.chunk.js.map": "/SebaMutuku/portfolio/static/js/453.b99e0dad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c12e1db5.css",
-    "static/js/main.c12e6cca.js"
+    "static/js/main.aabe8f53.js"
   ]
 }
