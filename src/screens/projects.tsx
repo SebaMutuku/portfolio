@@ -1,9 +1,8 @@
 import React from "react";
 import {Box, Card, CardContent, Container, ListItem, Typography} from "@mui/material";
 import Header from "src/components/header";
-import {appColors} from "src/constants/constants"; // Assuming appColors are defined
+import {appColors} from "src/constants/constants";
 
-// Define the type for the project items
 interface Project {
     title: string;
     description: string;
@@ -78,7 +77,7 @@ export default function Projects() {
                         {project.description}
                     </Typography>
                 </CardContent>
-                <CardContent sx={{paddingTop: 2,backgroundColor: appColors.white}}>
+                <CardContent sx={{paddingTop: 2, backgroundColor: appColors.white}}>
                     <Typography variant="body2" color="text.secondary">
                         <strong>Technologies Used:</strong> {project.technologies.join(", ")}
                     </Typography>
