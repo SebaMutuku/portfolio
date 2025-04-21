@@ -40,24 +40,20 @@ export default function Projects() {
 
     return (<>
         <Header/>
-        <Container sx={{ paddingTop: 4, marginTop: '100px' }}>
+        <Container sx={{paddingTop: 4, marginTop: '100px'}}>
             <Typography
                 variant="h4"
                 gutterBottom
                 textAlign="center"
                 fontFamily="Josefin Sans"
                 sx={{
-                    color: appColors.primary,
-                    zIndex: 10,
-                    position: 'relative',
-                    marginBottom: 4,
+                    color: appColors.primary, zIndex: 10, position: 'relative', marginBottom: 4,
                 }}
             >
                 Projects
             </Typography>
 
-            {projects.map((project, index) => (
-                <Card
+            {projects.map((project, index) => (<Card
                     key={index}
                     variant="outlined"
                     sx={{
@@ -68,36 +64,31 @@ export default function Projects() {
                         backgroundColor: appColors.card,
                         transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
                         '&:hover': {
-                            transform: 'scale(1.05)',
-                            boxShadow: `0px 8px 16px rgba(0, 0, 0, 0.3)`,
+                            transform: 'scale(1.05)', boxShadow: `0px 8px 16px rgba(0, 0, 0, 0.3)`,
                         },
                     }}
                 >
-                    <CardContent sx={{ background: appColors.primary, padding: '20px' }}>
-                        <Typography variant="h5" component="div" sx={{ fontWeight: '600', color: appColors.white }}>
+                    <CardContent sx={{background: appColors.primary, padding: '20px'}}>
+                        <Typography variant="h5" component="div" sx={{fontWeight: '600', color: appColors.white}}>
                             {project.title}
                         </Typography>
-                        <Typography variant="body1" sx={{ color: appColors.white, marginTop: 1 }}>
+                        <Typography variant="body1" sx={{color: appColors.white, marginTop: 1}}>
                             {project.description}
                         </Typography>
                     </CardContent>
-                    <CardContent sx={{ paddingTop: 2, backgroundColor: appColors.white }}>
+                    <CardContent sx={{paddingTop: 2, backgroundColor: appColors.white}}>
                         <Typography variant="body2" color="text.secondary">
                             <strong>Technologies Used:</strong> {project.technologies.join(", ")}
                         </Typography>
-                        {project.achievements && (
-                            <Box component="ul" sx={{ paddingLeft: 2, marginTop: 1 }}>
+                        {project.achievements && (<Box component="ul" sx={{paddingLeft: 2, marginTop: 1}}>
                                 <strong>Major Contributions:</strong>
                                 {project.achievements.map((achievement, idx) => (
-                                    <ListItem key={idx} sx={{ listStyle: "disc" }}>
+                                    <ListItem key={idx} sx={{listStyle: "disc"}}>
                                         <Typography variant="body2">{achievement}</Typography>
-                                    </ListItem>
-                                ))}
-                            </Box>
-                        )}
+                                    </ListItem>))}
+                            </Box>)}
                     </CardContent>
-                </Card>
-            ))}
+                </Card>))}
         </Container>
     </>);
 }

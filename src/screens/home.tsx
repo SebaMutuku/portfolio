@@ -7,9 +7,7 @@ import Header from "src/components/header";
 import {Star} from "@mui/icons-material";
 
 const useStyles = makeStyles((theme: Theme) => ({
-    root: {
-        // marginTop: "110px"
-    }, whatIDo: {
+    root: {}, whatIDo: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -31,7 +29,7 @@ const Summary = () => {
     const classes = useStyles();
     const currentDate = new Date();
     const startDate = new Date("01-04-2018")
-    const {years, months} = getDateDifference(startDate, currentDate);
+    const {years} = getDateDifference(startDate, currentDate);
     return (<div className={classes.summary}>
         <CardComponent cardContent={<>
             <Box sx={{
@@ -54,20 +52,22 @@ const Summary = () => {
                             mb: 2,
                             fontFamily: 'Josefin Sans',
                             fontSize: '20px',
-                        }}
-                    >
-                        Android and Web Backend with <b>{years} years and {months} months</b> of experience,
-                        innovative
-                        and talented Senior Software Engineer with experience in Java, Spring, Spring Boot,
-                        Spring Boot security implementation, microservices, Web service creation (SOAP and
-                        REST), Scala, Python, Django, Kotlin, and Quarkus.
-                        In addition, I have experience in Git, Git Workflows, with certification in CI/CD with
-                        GitHub Actions,
-                        Microsoft Team Foundation GIT, Docker, Kubernetes, Azure Cloud. I am experienced in
-                        mobile UI frameworks like React Native for Android and iOS development, Flutter for both
-                        Android and iOS, and Jetpack Compose.
-                        I have used Linux and have experience with Linux commands, shell scripting, and
-                        deployment on Linux environments.
+                        }}>
+                        Android and Web Backend Engineer with {years}+ years of experience — an innovative and talented
+                        software developer with strong proficiency in Java, Spring, Spring Boot, and web service
+                        creation (SOAP and REST). Experienced in Scala, Python, Django, Kotlin, and cloud-native
+                        development.
+                        Skilled in Git and Git Workflows, with certifications in CI/CD using GitHub Actions and
+                        Microsoft Team Foundation Git. Deep knowledge of Docker, Kubernetes, OpenShift, Spring Cloud,
+                        and Configuration Server. Proficient in Linux, shell scripting, and deployment on Linux
+                        environments.
+                        Experienced in developing frontends with React Native (Android & iOS), Flutter (cross-platform),
+                        and React JS. Worked extensively with financial applications including Temenos and Finacle, and
+                        their related systems.
+                        Specialized in building health-related software using the Google FHIR SDK and FHIR Resources.
+                        Experienced with the J-easy Rules Engine for implementing complex business logic. Strong focus
+                        on scalable backend architecture, DevOps automation, and delivering high-quality,
+                        production-ready software.
                     </Typography>
                 </Box>
                 <Box sx={{flex: 1, textAlign: 'center', px: 2}}>
@@ -86,45 +86,6 @@ const Summary = () => {
                     }} onClick={handleClick}>
                 Star me and follow me on Github</Button>
         </>}/>
-        {/*<div className={classes.summary}>*/}
-        {/*    <Stack direction="row" spacing={2}>*/}
-        {/*        <IconButton*/}
-        {/*            color="default"*/}
-        {/*            sx={{*/}
-        {/*                width: "45px",*/}
-        {/*                height: "45px",*/}
-        {/*                borderRadius: '50%',*/}
-        {/*                display: 'flex',*/}
-        {/*                justifyContent: 'center',*/}
-        {/*                alignItems: 'center',*/}
-        {/*                backgroundColor: appColors.black,*/}
-        {/*            }}*/}
-        {/*        >*/}
-        {/*            <GitHub sx={{*/}
-        {/*                color: appColors.white,*/}
-        {/*            }}/>*/}
-        {/*        </IconButton>*/}
-        {/*        <IconButton*/}
-        {/*            color="default"*/}
-        {/*            sx={{*/}
-        {/*                width: "45px",*/}
-        {/*                height: "45px",*/}
-        {/*                borderRadius: '50%',*/}
-        {/*                display: 'flex',*/}
-        {/*                justifyContent: 'center',*/}
-        {/*                alignItems: 'center',*/}
-        {/*                backgroundColor: appColors.red,*/}
-        {/*            }}*/}
-        {/*        >*/}
-        {/*            <Google sx={{*/}
-        {/*                color: appColors.white,*/}
-        {/*            }}/>*/}
-        {/*        </IconButton>*/}
-        {/*    </Stack>*/}
-        {/*    <p>*/}
-        {/*    </p>*/}
-
-        {/*</div>*/}
     </div>);
 
 }
@@ -141,7 +102,7 @@ const WhatIDo = () => {
         description: ["Languages: HTML, CSS, JavaScript, TypeScript", "Frameworks: React, Angular", "Testing: Jest, Mocha, Chai, Jasmine, Cypress, Selenium, Puppeteer, Testing Library", "Web sockets", "Consuming Apis, graphQL and Apollo", "React Hooks and state management with Redux and context", "Web hosting"]
     }, {
         title: 'CI/CD',
-        description: ["Code Collaboration and versioning", "Automated Build", "Automated Testing", "Code Analysis with SonarQube", "Automated Image tagging with docker", "Deployment to Staging with Docker and Kubernetes", "Integration Testing in Staging", "Post-Deployment Testing", "Monitoring and Logging with Sentry and Firebase","Istio for api management(as a gateway)", "Openshift deployments","Grafana logs with LOKI","Rollback Plan", "Performance Monitoring", "Code Documentation"]
+        description: ["Code Collaboration and versioning", "Automated Build", "Automated Testing", "Code Analysis with SonarQube", "Automated Image tagging with docker", "Deployment to Staging with Docker and Kubernetes", "Integration Testing in Staging", "Post-Deployment Testing", "Monitoring and Logging with Sentry and Firebase", "Istio for api management(as a gateway)", "Openshift deployments", "Grafana logs with LOKI", "Rollback Plan", "Performance Monitoring", "Code Documentation"]
     },];
     const classes = useStyles();
     return (<div className={classes.whatIDo}>

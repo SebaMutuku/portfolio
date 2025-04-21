@@ -6,16 +6,9 @@ import React, {useState} from "react";
 
 const styles = {
     headerTexts: {
-        fontWeight: '600',
-        fontFamily: 'Josefin Sans',
-        padding: '0px 2px',
-        margin: '0 5px',
-        '&:hover': {
-            textDecoration: 'underline',
-            color: appColors.white,
-            borderRadius: '5px',
-        },
-        color: appColors.white
+        fontWeight: '600', fontFamily: 'Josefin Sans', padding: '0px 2px', margin: '0 5px', '&:hover': {
+            textDecoration: 'underline', color: appColors.white, borderRadius: '5px',
+        }, color: appColors.white
     }
 };
 
@@ -27,25 +20,16 @@ const Header = () => {
         setDrawerOpen(open);
     };
 
-    const menuItems = [
-        {text: "Home", path: "/"},
-        {text: "Education", path: "/education"},
-        {text: "Experience", path: "/experience"},
-        {text: "Projects", path: "/projects"},
-        {text: "Contact", path: "/contactme"}
-    ];
+    const menuItems = [{text: "Home", path: "/"}, {text: "Education", path: "/education"}, {
+        text: "Experience",
+        path: "/experience"
+    }, {text: "Projects", path: "/projects"}, {text: "Contact", path: "/contactme"}];
 
-    return (
-        <>
+    return (<>
             <AppBar position="fixed" sx={{
-                mb: 4,
-                height: "100px",
-                overflow: 'hidden',
-                '::-webkit-scrollbar': {
+                mb: 4, height: "100px", overflow: 'hidden', '::-webkit-scrollbar': {
                     display: 'none',
-                },
-                msOverflowStyle: 'none',
-                scrollbarWidth: 'none'
+                }, msOverflowStyle: 'none', scrollbarWidth: 'none'
             }}
                     style={{
                         backgroundColor: appColors.primary,
@@ -53,16 +37,12 @@ const Header = () => {
                     elevation={0}>
                 <Toolbar sx={{flexGrow: 1, elevation: 0}}>
                     <Typography variant="h4" sx={{
-                        flexGrow: 1,
-                        color: appColors.white,
-                        fontFamily: 'Josefin Sans',
-                        fontWeight: 'bold'
+                        flexGrow: 1, color: appColors.white, fontFamily: 'Josefin Sans', fontWeight: 'bold'
                     }}>
                         Sebastian Mutuku
                     </Typography>
                     <Box sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
-                        {menuItems.map((item) => (
-                            <Typography
+                        {menuItems.map((item) => (<Typography
                                 key={item.text}
                                 color="inherit"
                                 variant="h6"
@@ -70,8 +50,7 @@ const Header = () => {
                                 onClick={() => navigate(item.path)}
                             >
                                 {item.text}
-                            </Typography>
-                        ))}
+                            </Typography>))}
                     </Box>
                     <Box sx={{display: {xs: 'flex', md: 'none'}}}>
                         <IconButton color="inherit" onClick={toggleDrawer(true)}>
@@ -86,15 +65,14 @@ const Header = () => {
                 onClose={toggleDrawer(false)}
                 sx={{
                     '& .MuiDrawer-paper': {
-                        backgroundColor: appColors.primary,
-                        color: appColors.white,
+                        backgroundColor: appColors.primary, color: appColors.white,
                     },
                 }}
             >
-                <Box sx={{width: 250, padding: '1em'}} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+                <Box sx={{width: 250, padding: '1em'}} role="presentation" onClick={toggleDrawer(false)}
+                     onKeyDown={toggleDrawer(false)}>
                     <List>
-                        {menuItems.map((item) => (
-                            <ListItem
+                        {menuItems.map((item) => (<ListItem
                                 button
                                 key={item.text}
                                 onClick={() => navigate(item.path)}
@@ -107,18 +85,14 @@ const Header = () => {
                                 <ListItemText
                                     primary={item.text}
                                     primaryTypographyProps={{
-                                        fontFamily: 'Josefin Sans',
-                                        fontWeight: '600',
-                                        fontSize: '1.2em',
+                                        fontFamily: 'Josefin Sans', fontWeight: '600', fontSize: '1.2em',
                                     }}
                                 />
-                            </ListItem>
-                        ))}
+                            </ListItem>))}
                     </List>
                 </Box>
             </Drawer>
-        </>
-    );
+        </>);
 };
 
 export default Header;
