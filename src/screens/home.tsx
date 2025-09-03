@@ -5,6 +5,7 @@ import {appColors, getDateDifference} from "src/constants/constants";
 import CardComponent from "src/components/card";
 import Header from "src/components/header";
 import {Star} from "@mui/icons-material";
+import {getExperienceYears} from "src/utils/utils";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {}, whatIDo: {
@@ -28,8 +29,7 @@ const Summary = () => {
 
     const classes = useStyles();
     const currentDate = new Date();
-    const startDate = new Date("01-04-2018")
-    const {years} = getDateDifference(startDate, currentDate);
+    const years = getExperienceYears(2018, 4);
     return (<div className={classes.summary}>
         <CardComponent cardContent={<>
             <Box sx={{
@@ -51,7 +51,7 @@ const Summary = () => {
                             fontWeight: 500,
                             mb: 2,
                             fontFamily: 'Josefin Sans',
-                            fontSize: '20px',
+                            fontSize: '20px'
                         }}>
                         Android and Web Backend Engineer with {years}+ years of experience — an innovative and talented
                         software developer with strong proficiency in Java, Spring, Spring Boot,Kotlin Spring and Ktor with koin, and web service
