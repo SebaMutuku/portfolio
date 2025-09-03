@@ -18,11 +18,12 @@ interface ExperienceSectionProps {
 }
 
 const SummarySection = () => {
-    const startDate = new Date(2018, 3);
+    const startDate = new Date(2018, 4);
     const today = new Date();
     const experienceYears = ((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365.25)).toFixed(0);
 
-    return (<Card
+    return (
+        <Card
             variant="outlined"
             sx={{
                 marginBottom: 4,
@@ -37,30 +38,17 @@ const SummarySection = () => {
                 </Typography>
                 <Divider sx={{backgroundColor: appColors.white, marginBottom: 2}}/>
                 <Typography variant="body1" fontFamily="Josefin Sans" paragraph sx={{color: appColors.white}}>
-                    Android and Web Backend Engineer with {experienceYears}+ years of experience — an innovative and
-                    talented software developer with strong proficiency in Java, Spring, Spring Boot, and web service
-                    creation (SOAP and REST). Experienced in Scala, Python, Django, Kotlin, and cloud-native
-                    development.
+                    Senior Software Engineer with over {experienceYears} years of experience specializing in Android and Web Backend development. Proficient in multiple programming languages including Java, Kotlin, Scala, and Python. Experienced in backend frameworks and APIs such as Spring, Spring Boot, Spring Security, Spring Quarkus, and Ktor, with a strong focus on building scalable, secure microservices and web services using REST and SOAP protocols. Skilled in mobile development with expertise in React Native and Flutter for cross-platform Android and iOS apps, as well as native UI development using Jetpack Compose.
                 </Typography>
                 <Typography variant="body1" fontFamily="Josefin Sans" paragraph sx={{color: appColors.white}}>
-                    Skilled in Git and Git Workflows, with certifications in CI/CD using GitHub Actions and Microsoft
-                    Team Foundation Git. Deep knowledge of Docker, Kubernetes, OpenShift, Spring Cloud, and
-                    Configuration
-                    Server. Proficient in Linux, shell scripting, and deployment on Linux environments.
+                    Deep knowledge of DevOps practices, version control, and CI/CD pipelines, certified in GitHub Actions, and experienced with Git workflows including Microsoft Team Foundation Git. Hands-on experience with containerization and orchestration technologies such as Docker, Podman, Kubernetes, and OpenShift. Proficient in deploying and managing applications in cloud environments including Azure Cloud and AWS. Comfortable working in Linux environments, with strong skills in shell scripting, Linux commands, and deployment automation.
                 </Typography>
                 <Typography variant="body1" fontFamily="Josefin Sans" paragraph sx={{color: appColors.white}}>
-                    Experienced in developing frontends with React Native (Android & iOS), Flutter (cross-platform), and
-                    React JS. Worked extensively with financial applications including Temenos and Finacle, and their
-                    related systems.
-                </Typography>
-                <Typography variant="body1" fontFamily="Josefin Sans" paragraph sx={{color: appColors.white}}>
-                    Specialized in building health-related software using the Google FHIR SDK and FHIR Resources.
-                    Experienced with the J-easy Rules Engine for implementing complex business logic. Strong focus on
-                    scalable backend architecture, DevOps automation, and delivering high-quality, production-ready
-                    software.
+                    This diverse technical background, combined with a passion for innovation and clean code, enables me to deliver efficient, maintainable, and high-quality software solutions across platforms.
                 </Typography>
             </CardContent>
-        </Card>);
+        </Card>
+    );
 };
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({title, experiences}) => (<Card
