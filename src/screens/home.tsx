@@ -1,7 +1,7 @@
 import React from "react";
 import {makeStyles} from '@mui/styles';
 import {Box, Button, Card, CardContent, Grid, ListItem, Theme, Typography} from "@mui/material";
-import {appColors, getDateDifference} from "src/constants/constants";
+import {appColors} from "src/constants/constants";
 import CardComponent from "src/components/card";
 import Header from "src/components/header";
 import {Star} from "@mui/icons-material";
@@ -28,7 +28,6 @@ const Summary = () => {
     };
 
     const classes = useStyles();
-    const currentDate = new Date();
     const years = getExperienceYears(2018, 4);
     return (<div className={classes.summary}>
         <CardComponent cardContent={<>
